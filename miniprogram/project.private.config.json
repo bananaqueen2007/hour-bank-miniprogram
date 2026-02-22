@@ -1,6 +1,6 @@
 {
   "libVersion": "3.14.2",
-  "projectname": "hour-bank-miniprogram",
+  "projectname": "miniprogram",
   "setting": {
     "urlCheck": true,
     "coverView": true,
@@ -10,5 +10,18 @@
     "autoAudits": false,
     "showShadowRootInWxmlPanel": true,
     "compileHotReLoad": true
+  },
+  "condition": {
+    "miniprogram": {
+      "list": [
+        {
+          "name": "pages/query/query",
+          "pathName": "pages/query/query",
+          "query": "",
+          "scene": null,
+          "launchMode": "default"
+        }
+      ]
+    }
   }
 }
