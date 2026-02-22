@@ -1,7 +1,12 @@
 {
   "pages": [
+<<<<<<< HEAD
     "pages/index/index",
     "pages/example/index"
+=======
+    "pages/input/input",
+    "pages/index/index"
+>>>>>>> 29b865a616dcbcde0b58b51caa6603976975a56d
   ],
   "window": {
     "backgroundColor": "#F6F6F6",

@@ -20,6 +20,10 @@
   },
   "condition": {},
   "description": "项目私有配置文件。此文件中的内容将覆盖 project.config.json 中的相同字段。项目的改动优先同步到此文件中。详见文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/projectconfig.html",
+<<<<<<< HEAD
   "projectname": "%E5%B7%A5%E6%97%B6%E5%82%A8%E8%93%84%E7%BD%90",
+=======
+  "projectname": "hour-bank-miniprogram",
+>>>>>>> 29b865a616dcbcde0b58b51caa6603976975a56d
   "libVersion": "3.14.2"
 }
