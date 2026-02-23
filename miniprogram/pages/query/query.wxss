@@ -1,0 +1,147 @@
+.container {
+  min-height: 100vh;
+  background-color: #f5f5f5;
+  padding: 30rpx;
+}
+
+.header {
+  text-align: center;
+  margin: 40rpx 0 40rpx 0;
+}
+
+.title {
+  font-size: 48rpx;
+  font-weight: bold;
+  color: #333;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 24rpx;
+  padding: 40rpx;
+  margin-bottom: 30rpx;
+  box-shadow: 0 4rpx 20rpx rgba(0, 0, 0, 0.08);
+}
+
+.form-item {
+  margin-bottom: 40rpx;
+}
+
+.label {
+  display: block;
+  font-size: 32rpx;
+  color: #666;
+  margin-bottom: 16rpx;
+  font-weight: 500;
+}
+
+input {
+  width: 100%;
+  height: 88rpx;
+  background-color: #f8f8f8;
+  border-radius: 16rpx;
+  padding: 0 24rpx;
+  font-size: 32rpx;
+  color: #333;
+  box-sizing: border-box;
+  border: 2rpx solid transparent;
+}
+
+input:focus {
+  border-color: #07c160;
+  background-color: #fff;
+}
+
+.placeholder {
+  color: #999;
+  font-size: 28rpx;
+}
+
+.query-btn {
+  background-color: #07c160;
+  color: white;
+  font-size: 36rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+  border-radius: 50rpx;
+  margin-top: 20rpx;
+  box-shadow: 0 4rpx 10rpx rgba(7, 193, 96, 0.3);
+}
+
+.query-btn:active {
+  opacity: 0.8;
+}
+
+.result-card {
+  background-color: #fff;
+  border-radius: 24rpx;
+  padding: 30rpx;
+  margin-bottom: 30rpx;
+  box-shadow: 0 4rpx 20rpx rgba(0, 0, 0, 0.08);
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20rpx); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.result-header {
+  border-bottom: 2rpx solid #f0f0f0;
+  padding-bottom: 20rpx;
+  margin-bottom: 20rpx;
+}
+
+.result-title {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #333;
+}
+
+.result-content {
+  padding: 10rpx 0;
+}
+
+.result-item {
+  display: flex;
+  padding: 16rpx 0;
+  font-size: 32rpx;
+}
+
+.result-label {
+  width: 140rpx;
+  color: #666;
+}
+
+.result-value {
+  flex: 1;
+  color: #333;
+  font-weight: 500;
+}
+
+.result-item.highlight .result-value {
+  color: #07c160;
+  font-size: 40rpx;
+  font-weight: bold;
+}
+
+.tips {
+  background-color: #f0f9f0;
+  border-radius: 16rpx;
+  padding: 30rpx;
+  margin-top: 20rpx;
+}
+
+.tips-title {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #07c160;
+  margin-bottom: 20rpx;
+}
+
+.tips-item {
+  font-size: 28rpx;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 12rpx;
+}
