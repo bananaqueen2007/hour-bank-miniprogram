@@ -1,0 +1,51 @@
+<view class="container">
+  <!-- 顶部欢迎区域 -->
+  <view class="welcome-section">
+    <image class="logo" src="/images/logo.png" mode="aspectFit"></image>
+    <text class="welcome-title">欢迎使用工时银行</text>
+    <text class="welcome-desc">记录你的每一份努力</text>
+  </view>
+  
+  <!-- 快捷入口卡片 -->
+  <view class="quick-actions">
+    <view class="section-title">快捷操作</view>
+    <view class="action-grid">
+      <view class="action-item" bindtap="goToInput">
+        <view class="action-icon">📝</view>
+        <view class="action-text">工时存入</view>
+        <view class="action-desc">记录今日工作</view>
+      </view>
+      
+      <view class="action-item" bindtap="goToQuery">
+        <view class="action-icon">🔍</view>
+        <view class="action-text">工时查询</view>
+        <view class="action-desc">查看累计工时</view>
+      </view>
+    </view>
+  </view>
+  
+  <!-- 使用统计卡片（可选） -->
+  <view class="stats-section" wx:if="{{hasData}}">
+    <view class="section-title">本月统计</view>
+    <view class="stats-card">
+      <view class="stat-item">
+        <text class="stat-label">总工时</text>
+        <text class="stat-value">{{totalHours}}h</text>
+      </view>
+      <view class="stat-item">
+        <text class="stat-label">工作天数</text>
+        <text class="stat-value">{{workDays}}天</text>
+      </view>
+    </view>
+  </view>
+  
+  <!-- 使用说明 -->
+  <view class="guide-section">
+    <view class="section-title">使用指南</view>
+    <view class="guide-list">
+      <view class="guide-item">• 点击"存入"记录每日工时</view>
+      <view class="guide-item">• 同一学号会自动累加</view>
+      <view class="guide-item">• 点击"查询"查看总工时</view>
+    </view>
+  </view>
+</view>

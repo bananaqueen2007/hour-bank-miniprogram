@@ -45,12 +45,8 @@
     "disableSWC": true
   },
   "appid": "wx4b9897923392126d",
-  "projectname": "quickstart-wx-cloud",
-<<<<<<< HEAD
-  "libVersion": "2.20.1",
-=======
+  "projectname": "工时银行",
   "libVersion": "3.14.2",
->>>>>>> 29b865a616dcbcde0b58b51caa6603976975a56d
   "cloudfunctionTemplateRoot": "cloudfunctionTemplate/",
   "condition": {
     "search": {
