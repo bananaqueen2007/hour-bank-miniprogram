@@ -1,0 +1,60 @@
+<view class="container">
+  <view class="header">
+    <text class="title">🔍 工时查询</text>
+  </view>
+  
+  <view class="card">
+    <view class="form-item">
+      <text class="label">姓名</text>
+      <input 
+        type="text" 
+        bindinput="onNameInput" 
+        placeholder="请输入姓名" 
+        placeholder-class="placeholder"
+        value="{{name}}"
+      />
+    </view>
+    
+    <view class="form-item">
+      <text class="label">学号</text>
+      <input 
+        type="text" 
+        bindinput="onStudentIdInput" 
+        placeholder="请输入学号" 
+        placeholder-class="placeholder"
+        value="{{studentId}}"
+      />
+    </view>
+    
+    <button type="primary" bindtap="queryHours" class="query-btn">查询工时</button>
+  </view>
+
+  <!-- 查询结果卡片 -->
+  <view class="result-card" wx:if="{{showResult}}">
+    <view class="result-header">
+      <text class="result-title">查询结果</text>
+    </view>
+    <view class="result-content">
+      <view class="result-item">
+        <text class="result-label">姓名：</text>
+        <text class="result-value">{{name}}</text>
+      </view>
+      <view class="result-item">
+        <text class="result-label">学号：</text>
+        <text class="result-value">{{studentId}}</text>
+      </view>
+      <view class="result-item highlight">
+        <text class="result-label">总工时：</text>
+        <text class="result-value">{{totalHours}} 小时</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 使用说明 -->
+  <view class="tips">
+    <view class="tips-title">📌 使用说明</view>
+    <view class="tips-item">• 输入姓名和学号查询总工时</view>
+    <view class="tips-item">• 姓名和学号必须完全匹配</view>
+    <view class="tips-item">• 学号不存在时会提示"学号不存在"</view>
+  </view>
+</view>

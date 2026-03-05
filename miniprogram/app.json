@@ -1,13 +1,14 @@
 {
   "pages": [
     "pages/input/input",
+    "pages/query/query",
     "pages/index/index"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#F6F6F6",
-    "navigationBarTitleText": "云开发 QuickStart",
+    "navigationBarTitleText": "工时银行",
     "navigationBarTextStyle": "black"
   },
   "sitemapLocation": "sitemap.json",
