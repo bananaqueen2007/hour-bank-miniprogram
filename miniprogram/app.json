@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/test/test",
     "pages/input/input",
     "pages/query/query",
     "pages/index/index"
@@ -7,9 +8,9 @@
   "window": {
     "backgroundColor": "#F6F6F6",
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarBackgroundColor": "#07c160",
     "navigationBarTitleText": "工时银行",
-    "navigationBarTextStyle": "black"
+    "navigationBarTextStyle": "white"
   },
   "sitemapLocation": "sitemap.json",
   "style": "v2",

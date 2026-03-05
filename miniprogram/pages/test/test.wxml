@@ -1,0 +1,16 @@
+<view class="container">
+  <view class="section">
+    <text class="title">数据库工具测试</text>
+  </view>
+  
+  <view class="section">
+    <button type="primary" bindtap="testAdd">测试新增记录</button>
+    <button type="primary" bindtap="testQuery">测试查询记录</button>
+    <button type="primary" bindtap="testUpdate">测试更新记录</button>
+    <button type="primary" bindtap="testGetAll">测试获取所有</button>
+  </view>
+  
+  <view class="result">
+    <text>{{result}}</text>
+  </view>
+</view>
