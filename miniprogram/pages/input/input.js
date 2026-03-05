@@ -36,14 +36,33 @@ Page({
       mask: true 
     });
 
-    setTimeout(() => {
-      wx.hideLoading();
-
-      wx.showToast({
-        title: '录入成功(模拟)',
-        icon: 'success',
-        duration: 2000
-      });
-    }, 1500); 
+wx.cloud.callFunction({
+  name: 'quickstartFunctions', 
+  data: {
+    type: 'insertRecord',
+    data: {
+      name: name,
+      studentId: studentId,
+      hours: hoursNum,
+      submitTime: new Date()
+    }
+  },
+  success: (res) => {
+    wx.hideLoading();
+    wx.showToast({
+      title: '提交成功！',
+      icon: 'success'
+    });
+    console.log('工时记录插入成功，记录ID:', res.result._id || res.result);
+  },
+  fail: (err) => {
+    wx.hideLoading();
+    wx.showToast({
+      title: '提交失败，请重试',
+      icon: 'none'
+    });
+    console.error('云函数调用失败:', err);
+  }
+});
   }
 });
