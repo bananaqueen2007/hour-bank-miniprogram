@@ -42,7 +42,7 @@ Page({
         })
         
         wx.showToast({ 
-          title: `累加成功!`, 
+          title: `累加成功！总工时：${newTotal}`, 
           icon: 'success' 
         })
       } else {

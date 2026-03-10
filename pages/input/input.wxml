@@ -1,0 +1,45 @@
+<view class="container">
+  <view class="header">
+    <text class="title">⏰ 工时存入</text>
+  </view>
+  
+  <form bindsubmit="submitForm">
+    <view class="form-item">
+      <text class="label">姓名</text>
+      <input 
+        type="text" 
+        name="name" 
+        placeholder="请输入姓名" 
+        placeholder-class="placeholder"
+      />
+    </view>
+    
+    <view class="form-item">
+      <text class="label">学号</text>
+      <input 
+        type="text" 
+        name="studentId" 
+        placeholder="请输入学号" 
+        placeholder-class="placeholder"
+      />
+    </view>
+    
+    <view class="form-item">
+      <text class="label">工时数</text>
+      <input 
+        type="number" 
+        name="hours" 
+        placeholder="请输入工时（小时）" 
+        placeholder-class="placeholder"
+        step="0.1"
+      />
+    </view>
+    
+    <button form-type="submit" type="primary" class="submit-btn">存入工时</button>
+  </form>
+  
+  <!-- 提示信息区域（可选） -->
+  <view class="tips">
+    <text class="tips-text">提示：同一学号会累加工时</text>
+  </view>
+</view>
