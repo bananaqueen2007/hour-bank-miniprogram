@@ -1,3 +1,7 @@
+<<<<<<< feature/db-utils
+<!--pages/query/query.wxml-->
+<text>pages/query/query.wxml</text>
+=======
 <view class="container">
   <view class="header">
     <text class="title">🔍 工时查询</text>
@@ -58,3 +62,4 @@
     <view class="tips-item">• 学号不存在时会提示"学号不存在"</view>
   </view>
 </view>
+>>>>>>> main
