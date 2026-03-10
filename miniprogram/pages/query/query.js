@@ -66,6 +66,7 @@ Page({
   }
 =======
 // miniprogram/pages/query/query.js
+const dbUtils = require('../../utils/db.js')
 Page({
   // 页面初始数据
   data: {
