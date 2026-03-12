@@ -1,17 +1,29 @@
 {
   "pages": [
     "pages/input/input",
-    "pages/query/query",
-    "pages/index/index"
+    "pages/query/query"
   ],
   "window": {
-    "backgroundColor": "#F6F6F6",
-    "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#F6F6F6",
     "navigationBarTitleText": "工时银行",
-    "navigationBarTextStyle": "black"
+    "navigationBarBackgroundColor": "#07c160",
+    "navigationBarTextStyle": "white"
   },
-  "sitemapLocation": "sitemap.json",
-  "style": "v2",
-  "lazyCodeLoading": "requiredComponents"
+  "tabBar": {
+    "color": "#7A7E83",
+    "selectedColor": "#07c160",
+    "list": [
+      {
+        "pagePath": "pages/input/input",
+        "text": "存入",
+        "iconPath": "images/input.png",
+        "selectedIconPath": "images/input_active.png"
+      },
+      {
+        "pagePath": "pages/query/query",
+        "text": "查询",
+        "iconPath": "images/query.png",
+        "selectedIconPath": "images/query_active.png"
+      }
+    ]
+  }
 }
