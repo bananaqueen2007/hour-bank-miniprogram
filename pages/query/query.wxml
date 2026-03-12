@@ -29,7 +29,6 @@
     <button type="primary" bindtap="queryHours" class="query-btn">查询工时</button>
   </view>
 
-  <!-- 查询结果卡片 -->
   <view class="result-card" wx:if="{{showResult}}">
     <view class="result-header">
       <text class="result-title">查询结果</text>
@@ -48,13 +47,5 @@
         <text class="result-value">{{totalHours}} 小时</text>
       </view>
     </view>
-  </view>
-
-  <!-- 使用说明 -->
-  <view class="tips">
-    <view class="tips-title">📌 使用说明</view>
-    <view class="tips-item">• 输入姓名和学号查询总工时</view>
-    <view class="tips-item">• 姓名和学号必须完全匹配</view>
-    <view class="tips-item">• 学号不存在时会提示"学号不存在"</view>
   </view>
 </view>

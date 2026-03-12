@@ -1,159 +1,66 @@
-<<<<<<< feature/db-utils
-// pages/query/query.js
-Page({
-
-  /**
-   * 页面的初始数据
-   */
-  data: {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad(options) {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload() {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh() {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom() {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage() {
-
-  }
-=======
-// miniprogram/pages/query/query.js
 const dbUtils = require('../../utils/db.js')
+
 Page({
-  // 页面初始数据
   data: {
-    name: '',           // 姓名
-    studentId: '',      // 学号
-    showResult: false,  // 是否显示结果
-    totalHours: 0       // 总工时
-  },
-// 页面加载时执行
-onLoad() {
-  console.log('查询页面加载成功')
-},
-
-// 输入姓名
-onNameInput(e) {
-  this.setData({
-    name: e.detail.value
-  })
-},
-
-// 输入学号
-onStudentIdInput(e) {
-  this.setData({
-    studentId: e.detail.value
-  })
-},
-
-// 查询工时（模拟版本）
-queryHours() {
-  const { name, studentId } = this.data
-  
-  // 1. 验证输入
-  if (!name || !studentId) {
-    wx.showToast({
-      title: '请填写姓名和学号',
-      icon: 'none'
-    })
-    return
-  }
-  
-  // 2. 显示加载中
-  wx.showLoading({
-    title: '查询中...'
-  })
-  
-  // 3. 模拟查询（等队友C的数据库工具写好再替换）
-  setTimeout(() => {
-    wx.hideLoading()
-    
-    // 模拟不同情况
-    if (studentId === '2024001' && name === '张三') {
-      // 模拟查询成功
-      this.setData({
-        showResult: true,
-        totalHours: 42.5
-      })
-      wx.showToast({
-        title: '查询成功',
-        icon: 'success'
-      })
-    } else if (studentId === '2024001') {
-      // 模拟姓名不匹配
-      wx.showToast({
-        title: '姓名与学号不匹配',
-        icon: 'none'
-      })
-      this.setData({ showResult: false })
-    } else {
-      // 模拟学号不存在
-      wx.showToast({
-        title: '学号不存在',
-        icon: 'none'
-      })
-      this.setData({ showResult: false })
-    }
-  }, 1000)
-},
-
-// 清空输入（可选功能）
-clearInput() {
-  this.setData({
     name: '',
     studentId: '',
     showResult: false,
     totalHours: 0
-  })
-}
+  },
 
->>>>>>> main
+  onNameInput(e) {
+    this.setData({ 
+      name: e.detail.value,
+      showResult: false
+    })
+  },
+
+  onStudentIdInput(e) {
+    this.setData({ 
+      studentId: e.detail.value,
+      showResult: false
+    })
+  },
+
+  async queryHours() {
+    const { name, studentId } = this.data
+    if (!name || !studentId) {
+      wx.showToast({ title: '请填写姓名和学号', icon: 'none' })
+      return
+    }
+
+    wx.showLoading({ title: '查询中...' })
+
+    try {
+      const record = await dbUtils.findRecordByStudentId(studentId)
+      if (!record) {
+        wx.showToast({ title: '学号不存在', icon: 'none' })
+        this.setData({ showResult: false })
+        return
+      }
+      if (record.name !== name) {
+        wx.showToast({ title: '姓名与学号不匹配', icon: 'none' })
+        this.setData({ showResult: false })
+        return
+      }
+      this.setData({
+        showResult: true,
+        totalHours: record.hours.toFixed(2)
+      })
+    } catch (err) {
+      console.error(err)
+      wx.showToast({ title: '查询失败', icon: 'error' })
+    } finally {
+      wx.hideLoading()
+    }
+  },
+
+  clearInput() {
+    this.setData({
+      name: '',
+      studentId: '',
+      showResult: false,
+      totalHours: 0
+    })
+  }
 })
